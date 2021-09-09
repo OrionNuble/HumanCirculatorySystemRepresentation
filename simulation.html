@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Circulatory System Simulation</title>
+    <link rel="stylesheet" href="simulation.css">
+</head>
+<body>
+
+    <header>Welcome to the Human Circulatory System</header>
+    <header>WARNING: Stats, and any information you will see on this page are not %100 accurate. Maybe not even %50. Example: Adrenaline inreases the heart rate. But by how much?
+        The "how much" you will see on this page is not scientifically accurate. This page is made for fun purposes. Learn at your own risk.</header>
+
+    <h5>Please enter your desired values below</h5>
+    <h6>Unfortunately, if you resize the window, the Canvas will be cleared. If you do so, please reload the page</h6>
+
+    <p>Select a Hormone to Change It's Levels (% of the Normal Values): 
+
+        <select id="HormonesSelector" class="HormonesDropdown">
+
+            <option value="1">Adrenaline</option>
+            <option value="2">Dopamine</option>
+            <option value="3">Acetylcholine</option>
+
+        </select>
+
+        <input type="text" id="PercentOfTheNormal"></input>
+
+        <input onclick="ApplyHormones()" type="submit" value="Apply">
+
+    </p>
+
+    <p>Oxygen Intake Rate (% of the Normal Values):
+
+        <input type="text" id="OxygenInRate"></input>
+        <input onclick="ApplyOxygenIntake()" type="submit" value="Apply">
+
+    </p>
+    
+    <p>Stress Levels (Default is 0.):
+
+        <input type="text" id="StressLevels"></input>
+        <input onclick="ApplyStress()" type="submit" value="Apply">
+
+    </p>
+
+    <p>Caffeine Levels (Default is 0.):
+
+        <input type="text" id="CaffeineLevels"></input>
+        <input onclick="ApplyCaffeine()" type="submit" value="Apply">
+
+    </p>
+
+    
+
+    <p>Click to Reset to Default:
+
+        <input onclick="ResetValues()" type="submit" value="Reset">
+
+    </p>
+
+    <table align="right">
+
+        <tr>
+            <th>---------- Hormone Levels ----------</th>
+        </tr>
+
+        <tr>
+            <th>Adrenaline Levels: <span class="AdrenalineLevels"></span> <label> % of the Normal</label></th>
+        </tr>
+
+        <tr>
+            <th>Dopamine Levels: <span class="DopamineLevels"></span> <label> % of the Normal</label></th>
+        </tr>
+
+        <tr>
+            <th>Acetylcholine Levels: <span class="AcetylcholineLevels"></span> <label> % of the Normal</label></th>
+        </tr>
+
+        <tr>
+            <th>---------- Other Levels ----------</th>
+        </tr>
+
+        <tr>
+            <th>Stress Levels: <span class="stressLevels"></span></th>
+        </tr>
+
+        <tr>
+            <th>Caffeine Levels: <span class="caffeineLevels"></span></th>
+        </tr>
+
+        <tr>
+            <th>---------- Body Stats ----------</th>
+        </tr>
+
+        <tr>
+            <th>Current Heart Rate: <span class="heartRate"></span> <label> Beats / Minute</label></th>
+        </tr>
+
+        <tr>
+            <th>Blood Pressure: <span class="bloodPressure"></span> <label> mm/Hg</label></th>
+        </tr>
+
+        <tr>
+            <th>Oxygen Levels: <span class="oxygenLevels"></span> <label> % of the Normal</label></th>
+        </tr>
+
+    </table>
+
+    <canvas id="Canvas"></canvas>
+    <script src="simulation.js"></script>
+    <script src="SimulationController.js"></script>
+</body>
+</html>
